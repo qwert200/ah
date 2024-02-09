@@ -12,8 +12,7 @@ as you want or you can collabe if you have new ideas.
 import random
 import string
 
-from pyrogram import filters
-from strings.filters import command
+from pyrogram import command
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
