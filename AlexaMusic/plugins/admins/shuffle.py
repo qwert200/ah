@@ -26,7 +26,7 @@ SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")
 
 
 @app.on_message(
-    command(SHUFFLE_COMMAND)
+ filters.command(SHUFFLE_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
