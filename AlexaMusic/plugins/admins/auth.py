@@ -31,7 +31,11 @@ UNAUTH_COMMAND = get_command("UNAUTH_COMMAND")
 AUTHUSERS_COMMAND = get_command("AUTHUSERS_COMMAND")
 
 
-@app.on_message(filters.command(AUTH_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+    command(AUTH_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 @AdminActual
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
@@ -93,7 +97,11 @@ async def auth(client, message: Message, _):
         await message.reply_text(_["auth_3"])
 
 
-@app.on_message(filters.command(UNAUTH_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+    command(UNAUTH_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 @AdminActual
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
@@ -126,8 +134,11 @@ async def unauthusers(client, message: Message, _):
         return await message.reply_text(_["auth_5"])
 
 
-@app.on_message(filters.command(AUTHUSERS_COMMAND) & filters.group & ~BANNED_USERS)
-@language
+@app.on_message(
+    command(AUTHUSERS_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 async def authusers(client, message: Message, _):
     _playlist = await get_authuser_names(message.chat.id)
     if not _playlist:
