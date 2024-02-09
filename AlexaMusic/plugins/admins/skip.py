@@ -31,7 +31,7 @@ SKIP_COMMAND = get_command("SKIP_COMMAND")
 
 
 @app.on_message(
-    command(SKIP_COMMAND)
+ filters.command(SKIP_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
@@ -226,7 +226,7 @@ async def skip(cli, message: Message, _, chat_id):
 
 
 @app.on_message(
-    command(SKIP_COMMAND)
+ filters.command(SKIP_COMMAND)
     & filters.channel
     & ~BANNED_USERS
 )
