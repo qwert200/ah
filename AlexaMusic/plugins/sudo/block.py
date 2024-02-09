@@ -27,7 +27,7 @@ BLOCKED_COMMAND = get_command("BLOCKED_COMMAND")
 
 
 @app.on_message(
-    command(BLOCK_COMMAND)
+ filters.command(BLOCK_COMMAND)
     & SUDOERS
 )
 @language
@@ -57,7 +57,7 @@ async def useradd(client, message: Message, _):
 
 
 @app.on_message(
-    command(UNBLOCK_COMMAND)
+ filters.command(UNBLOCK_COMMAND)
     & SUDOERS
 )
 @language
@@ -84,7 +84,7 @@ async def userdel(client, message: Message, _):
 
 
 @app.on_message(
-    command(BLOCKED_COMMAND)
+ filters.command(BLOCKED_COMMAND)
     & SUDOERS
 )
 @language
