@@ -27,7 +27,7 @@ ACTIVEVIDEO_COMMAND = get_command("ACTIVEVIDEO_COMMAND")
 
 
 @app.on_message(
-    command(ACTIVEVC_COMMAND)
+ filters.command(ACTIVEVC_COMMAND)
     & SUDOERS
 )
 async def activevc(_, message: Message):
@@ -56,7 +56,7 @@ async def activevc(_, message: Message):
 
 
 @app.on_message(
-    command(ACTIVEVIDEO_COMMAND)
+ filters.command(ACTIVEVIDEO_COMMAND)
     & SUDOERS
 )
 async def activevi_(_, message: Message):
