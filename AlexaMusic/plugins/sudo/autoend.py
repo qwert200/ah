@@ -24,7 +24,7 @@ AUTOEND_COMMAND = get_command("AUTOEND_COMMAND")
 
 
 @app.on_message(
-    command(AUTOEND_COMMAND)
+ filters.command(AUTOEND_COMMAND)
     & SUDOERS
 )
 async def auto_end_stream(client, message):
