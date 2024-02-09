@@ -117,7 +117,6 @@ async def get_keyboard(_, user_id):
 
 @app.on_message(
     filters.command(DELETEPLAYLIST_COMMAND)
-    & filters.private
     & ~BANNED_USERS
 )
 @language
