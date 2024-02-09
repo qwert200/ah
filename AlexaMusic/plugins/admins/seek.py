@@ -25,7 +25,7 @@ SEEK_COMMAND = get_command("SEEK_COMMAND")
 
 
 @app.on_message(
-    command(SEEK_COMMAND)
+    filters.command(SEEK_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
