@@ -26,7 +26,12 @@ from AlexaMusic.utils.stream.stream import stream
 STREAM_COMMAND = get_command("STREAM_COMMAND")
 
 
-@app.on_message(filters.command(STREAM_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+ filters.command(STREAM_COMMAND,"")
+    & filters.group
+    & ~filters.edited
+    & ~BANNED_USERS
+)
 @PlayWrapper
 async def stream_command(
     client,
