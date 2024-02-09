@@ -63,7 +63,11 @@ from AlexaMusic.utils.inline.start import private_panel
 SETTINGS_COMMAND = get_command("SETTINGS_COMMAND")
 
 
-@app.on_message(filters.command(SETTINGS_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+    command(SETTINGS_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 @language
 async def settings_mar(client, message: Message, _):
     buttons = setting_markup(_)
@@ -73,7 +77,9 @@ async def settings_mar(client, message: Message, _):
     )
 
 
-@app.on_callback_query(filters.regex("settings_helper") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex("settings_helper") & ~BANNED_USERS
+)
 @languageCB
 async def settings_cb(client, CallbackQuery, _):
     try:
@@ -90,7 +96,9 @@ async def settings_cb(client, CallbackQuery, _):
     )
 
 
-@app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex("settingsback_helper") & ~BANNED_USERS
+)
 @languageCB
 async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
     try:
@@ -393,7 +401,9 @@ async def playmode_ans(client, CallbackQuery, _):
 
 
 # Auth Users Settings
-@app.on_callback_query(filters.regex(pattern=r"^(AUTH|AUTHLIST)$") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex(pattern=r"^(AUTH|AUTHLIST)$") & ~BANNED_USERS
+)
 @ActualAdminCB
 async def authusers_mar(client, CallbackQuery, _):
     command = CallbackQuery.matches[0].group(1)
