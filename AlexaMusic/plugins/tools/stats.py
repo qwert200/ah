@@ -58,7 +58,6 @@ STATS_COMMAND = get_command("STATS_COMMAND")
  filters.command(STATS_COMMAND,"")
     & filters.group
     & filters.private
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @language
@@ -75,7 +74,6 @@ async def stats_global(client, message: Message, _):
  filters.command(GSTATS_COMMAND,"")
     & filters.group
     & filters.private
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @language
