@@ -37,8 +37,7 @@ y.verbose = False
 
 
 @app.on_message(
-    command(LYRICS_COMMAND)
-    & filters.edited
+ filters.command(LYRICS_COMMAND)
     & ~BANNED_USERS
 )
 @language
