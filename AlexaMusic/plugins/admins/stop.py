@@ -23,7 +23,7 @@ STOP_COMMAND = get_command("STOP_COMMAND")
 
 
 @app.on_message(
-    command(STOP_COMMAND)
+ filters.command(STOP_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
@@ -39,7 +39,7 @@ async def stop_music(cli, message: Message, _, chat_id):
 
 
 @app.on_message(
-    command(STOP_COMMAND)
+ filters.command(STOP_COMMAND)
     & filters.channel
     & ~BANNED_USERS
 )
