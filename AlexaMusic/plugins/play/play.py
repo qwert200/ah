@@ -12,7 +12,7 @@ as you want or you can collabe if you have new ideas.
 import random
 import string
 
-from pyrogram import command
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -43,7 +43,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
-    command(PLAY_COMMAND)
+ filters.command(PLAY_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
@@ -689,7 +689,7 @@ async def slider_queries(client, CallbackQuery, _):
 
 
 @app.on_message(
-    command(["/play", "/vplay", "play", "vplay", "شغل", "تشغيل", "فديو", "فيديو"])
+ filters.command(["/play", "/vplay", "play", "vplay", "شغل", "تشغيل", "فديو", "فيديو"])
     & filters.channel
     & ~BANNED_USERS
 )
