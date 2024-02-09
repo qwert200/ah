@@ -25,7 +25,7 @@ RESUME_COMMAND = get_command("RESUME_COMMAND")
 
 
 @app.on_message(
-    command(RESUME_COMMAND)
+    filters.command(RESUME_COMMAND)
     & filters.group
     & ~BANNED_USERS
 )
