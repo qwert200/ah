@@ -38,7 +38,7 @@ def testspeed(m):
 
 
 @app.on_message(
-    command(SPEEDTEST_COMMAND)
+ filters.command(SPEEDTEST_COMMAND)
     & SUDOERS
 )
 async def speedtest_function(client, message):
