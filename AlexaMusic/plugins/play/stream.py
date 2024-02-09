@@ -29,7 +29,6 @@ STREAM_COMMAND = get_command("STREAM_COMMAND")
 @app.on_message(
  filters.command(STREAM_COMMAND,"")
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @PlayWrapper
