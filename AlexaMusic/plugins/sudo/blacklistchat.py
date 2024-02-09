@@ -28,7 +28,7 @@ BLACKLISTEDCHAT_COMMAND = get_command("BLACKLISTEDCHAT_COMMAND")
 
 
 @app.on_message(
-    command(BLACKLISTCHAT_COMMAND)
+  filters.command(BLACKLISTCHAT_COMMAND)
     & SUDOERS
 )
 @language
@@ -50,7 +50,7 @@ async def blacklist_chat_func(client, message: Message, _):
 
 
 @app.on_message(
-    command(WHITELISTCHAT_COMMAND)
+  filters.command(WHITELISTCHAT_COMMAND)
     & SUDOERS
 )
 @language
@@ -67,7 +67,7 @@ async def white_funciton(client, message: Message, _):
 
 
 @app.on_message(
-    command(BLACKLISTEDCHAT_COMMAND)
+  filters.command(BLACKLISTEDCHAT_COMMAND)
     & ~BANNED_USERS
 )
 @language
